@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>GG Casino</title>
+		<link rel="stylesheet" href="./assets/css/main.css" />
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="manifest" href="manifest.json" />
+	</head>
+	<body>
+		<header class="header">
+			<div class="header__container">
+				<a href="./index.html">
+					<img class="header__logo" src="./assets/images/logo.svg" alt="logo" />
+				</a>
+				<nav class="header__nav">
+					<a class="header__nav-link" href="./index.html">Home</a>
+					<a class="header__nav-link" href="#games">Games</a>
+					<a class="header__nav-link" href="#contact">Contact</a>
+				</nav>
+			</div>
+		</header>
+		<main class="main">
+			<section class="best-games"></section>
+			<section class="games"></section>
+		</main>
+		<footer class="footer">
+			<div class="footer__container"></div>
+		</footer>
+		<script>
+			for (let a of [...document.querySelectorAll('a')]) {
+				if (a.target === '_parent') {
+					continue
+				}
+				a.href +=
+					(a.href.includes('?') ? '&' : '?') +
+					document.location.search.substr(1)
+			}
+		</script>
+		<script src="./assets/js/index.js"></script>
+	</body>
+</html>
