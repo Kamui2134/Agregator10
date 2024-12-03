@@ -56,13 +56,15 @@ html {
 	scroll-behavior: smooth;
 	line-height: 1;
 }
+body {
+	background-image: url('../images/bg1.png');
+	background-position: top;
+	background-repeat: repeat-y;
+	background-size: cover;
+}
 body,
 html {
 	overflow-x: hidden;
 	min-width: 100vw;
 	width: 100vw;
-	background-image: url("../images/bg1.png");
-	background-position: top;
-	background-repeat: repeat-y;
-	background-size: cover;
 }
