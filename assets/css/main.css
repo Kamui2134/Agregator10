@@ -2,7 +2,40 @@
 
 :root {
 	--color-white: #fff;
-    --color-blue-1: #003049;
+	--color-blue-1: #1ff0fd;
+	--color-blue-2: #336ff4;
+	--color-purple-1: #040814;
+	--color-pink-1: #e321df;
+	--color-translucent-1: #ffffff71;
+	--color-green-1: #0a2b39;
+	--color-green-2: #14818d;
+	--color-green-3: #0dd795;
+	--color-yellow-1: #e9d311;
+	--color-gray-1: rgb(30, 41, 59);
+
+	--color-cazeus: #0f1525;
+	--color-r2pbet: #163351;
+	--color-basswin: #0e2c2e;
+	--color-fatpirate: #5b3824;
+	--color-memocasino: #161618;
+	--color-kinghills: #163d8c;
+	--color-amonbet: #000000;
+	--color-gransino: #000000;
+	--color-heyspin: #000000;
+	--color-jokabet: #1e2132;
+	--color-rolletto: #1e2132;
+	--color-tikitaka: #000000;
+	--color-velobet: #000000;
+	--color-ninewin: #070e28;
+	--color-f7casino: #000000;
+	--color-loki: #213043;
+	--color-tikitaka: #000000;
+	--color-gransino: #000000;
+	--color-cosmobet: #101113;
+	--color-goldenmister: #001553;
+	--color-bountyreels: #00013a;
+	--color-luckymister: #000000;
+	--color-verywell: #000031;
 
 	--fontSize-12: 12px;
 	--fontSize-14: 14px;
@@ -10,40 +43,206 @@
 	--fontSize-20: 12px;
 	--fontSize-24: 24px;
 	--fontSize-32: 32px;
+	--fontSize-40: 40px;
+	--fontSize-66: 66px;
 
-    --weight-regular: 400;
-    --weight-medium: 500;
-    --weight-semibold: 600;
-    --weight-bold: 700;
-    --weight-extrabold: 800;
-    --weight-bold: 900;
+	--weight-light: 300;
+	--weight-regular: 400;
+	--weight-medium: 500;
+	--weight-semibold: 600;
+	--weight-bold: 700;
+	--weight-extrabold: 800;
+	--weight-bold: 900;
 }
 
 /* REUSED STYLES */
-
+.casino-link {
+	background: linear-gradient(90deg, var(--color-blue-2), var(--color-pink-1));
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 15px 20px;
+	color: var(--color-white);
+	border-radius: 5px;
+	width: 70%;
+	text-wrap: nowrap;
+}
+.casino-link--header {
+	padding: 20px 30px;
+	width: max-content;
+}
 /* HEADER */
-
+.header {
+	padding: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.header__container {
+	width: min(1200px, 100%);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.header__logo {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
+.header__logo-img {
+	height: 40px;
+	width: 40px;
+	object-fit: contain;
+}
+.header__logo-text {
+	color: var(--color-white);
+	text-transform: uppercase;
+	font-size: var(--fontSize-24);
+}
+.header__nav {
+	display: flex;
+	gap: 30px;
+}
+.header__nav-link {
+	color: var(--color-translucent-1);
+}
 /* MAIN */
 .main {
-    width: 100%;
-    height: 100vh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 40px;
+}
+
+/* MAIN -> BEST-GAMES */
+.best-games {
+	width: min(1600px, 100%);
+	margin-bottom: 80px;
+	position: relative;
+	padding: 0 20px;
+}
+.best-games__description {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 20px;
+}
+.best-games__text {
+	color: var(--color-blue-1);
+	text-transform: uppercase;
+}
+.best-games__title {
+	font-size: var(--fontSize-40);
+	color: var(--color-white);
+	line-height: 1.3;
+	text-align: center;
+}
+.best-games__disclaimer {
+	width: 100%;
+	color: var(--color-pink-1);
+	text-align: center;
+}
+.best-games__games {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+.best-games__game {
+	width: min(450px, 100%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 30px;
+	padding: 30px 20px 20px;
+	border-radius: 10px;
+	background-color: var(--color-green-1);
+	border: 3px solid var(--color-green-2);
+	box-shadow: inset 0 0 20px var(--color-green-2);
+	transition: all 200ms ease;
+}
+.best-games__game-title {
+	color: var(--color-green-3);
+	font-size: var(--fontSize-32);
+	font-weight: var(--weight-regular);
+}
+.best-games__game-logo {
+	width: 100%;
+	height: 250px;
+	object-fit: contain;
+	border-radius: 10px;
+	padding: 40px;
+	filter: drop-shadow(0px 0px 30px var(--color-green-3));
+}
+.best-games__line {
+	width: 100%;
+	background-color: var(--color-green-3);
+	border-radius: 100px;
+	height: 4px;
+}
+.best-games__game-text-container {
+	width: 100%;
+}
+.best-games__game-bonus {
+	color: var(--color-white);
+	line-height: 1.3;
+	width: 100%;
+	margin-bottom: 20px;
+	font-weight: var(--weight-semibold);
+}
+.best-games__game-text {
+	color: var(--color-translucent-1);
+	line-height: 1.3;
+	width: 100%;
+}
+
+/* MAIN -> GAMES */
+
+.games {
+	width: min(1300px, 100%);
+}
+.games__description {
+	width: 100%;
+	margin-bottom: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 20px;
+}
+.games__title {
+	color: var(--color-white);
+	font-size: var(--fontSize-66);
+}
+.games__text {
+	color: var(--color-translucent-1);
+}
+.games__games {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+}
+.games__game {
+	width: 100%;
+	background-color: var(--color-gray-1);
+}
+.games__logo-container {
+	
 }
 
 /* FOOTER */
 
 /* MEDIA */
-@media(max-width: 1200px) {
-    
+@media (max-width: 1200px) {
 }
-@media(max-width: 960px) {
-    
+@media (max-width: 960px) {
 }
-@media(max-width: 720px) {
-    
+@media (max-width: 720px) {
 }
-@media(max-width: 540px) {
-    
+@media (max-width: 540px) {
 }
-@media(max-width: 420px) {
-    
+@media (max-width: 420px) {
 }

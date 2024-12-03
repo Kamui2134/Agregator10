@@ -7,23 +7,83 @@
 		<link rel="stylesheet" href="./assets/css/main.css" />
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 		<link rel="manifest" href="manifest.json" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
 	<body>
 		<header class="header">
 			<div class="header__container">
 				<a href="./index.html">
-					<img class="header__logo" src="./assets/images/logo.svg" alt="logo" />
+					<div class="header__logo">
+						<img
+							class="header__logo-img"
+							src="./assets/images/logo.png"
+							alt="logo"
+						/>
+						<h1 class="header__logo-text">GGCasino</h1>
+					</div>
 				</a>
 				<nav class="header__nav">
-					<a class="header__nav-link" href="./index.html">Home</a>
-					<a class="header__nav-link" href="#games">Games</a>
-					<a class="header__nav-link" href="#contact">Contact</a>
+					<a target="_parent" class="header__nav-link" href="./index.html"
+						>Home</a
+					>
+					<a target="_parent" class="header__nav-link" href="#games">Games</a>
+					<a target="_parent" class="header__nav-link" href="#contact"
+						>Contact</a
+					>
 				</nav>
+				<a class="casino-link casino-link--header" href="">Explore App</a>
 			</div>
 		</header>
 		<main class="main">
-			<section class="best-games"></section>
-			<section class="games"></section>
+			<section class="best-games">
+				<div class="best-games__description">
+					<p class="best-games__text">ggcasino™</p>
+					<h1 class="best-games__title">
+						Find the best UK casino offers – play and win!
+					</h1>
+					<p class="best-games__disclaimer">
+						The content is not intended for users under the age of 18.
+					</p>
+				</div>
+				<div class="best-games__games">
+					<div class="best-games__game">
+						<h1 class="best-games__game-title">Fat Pirate</h1>
+						<img
+							class="best-games__game-logo"
+							src="./assets/images/fatpirate.png"
+							alt="fatpirate"
+						/>
+						<div class="best-games__line"></div>
+						<div class="best-games__text-container">
+							<p class="best-games__game-bonus">
+								Welcome Bonus up to €6,000 + 230 Free Spins
+							</p>
+							<p class="best-games__game-text">
+								FatPirate Casino offers a fun, pirate-themed online gaming
+								experience with a wide range of slots, table games, and exciting
+								promotions.
+							</p>
+						</div>
+						<a class="casino-link" href="">Visit Casino</a>
+					</div>
+				</div>
+			</section>
+			<section class="games">
+				<div class="games__description">
+					<h1 class="games__title">Rewards</h1>
+					<p class="games__text">Unlock Exclusive Rewards at GG Casino's Highest-Rated Casinos!</p>
+				</div>
+				<ul class="games__games">
+					<li class="games__game">
+						
+					</li>
+				</ul>
+			</section>
 		</main>
 		<footer class="footer">
 			<div class="footer__container"></div>
