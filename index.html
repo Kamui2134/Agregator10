@@ -13,6 +13,10 @@
 			href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
 			rel="stylesheet"
 		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+		/>
 	</head>
 	<body>
 		<header class="header">
@@ -21,7 +25,7 @@
 					<div class="header__logo">
 						<img
 							class="header__logo-img"
-							src="./assets/images/logo.png"
+							src="./assets/images/logo.svg"
 							alt="logo"
 						/>
 						<h1 class="header__logo-text">GGCasino</h1>
@@ -34,6 +38,9 @@
 					<a target="_parent" class="header__nav-link" href="#games">Games</a>
 					<a target="_parent" class="header__nav-link" href="#contact"
 						>Contact</a
+					>
+					<a target="_parent" class="header__nav-link" href="#reviews"
+						>Reviews</a
 					>
 				</nav>
 				<a class="casino-link casino-link--header" href="">Explore App</a>
@@ -52,12 +59,12 @@
 				</div>
 				<div class="best-games__games">
 					<div class="best-games__game">
-						<h1 class="best-games__game-title">Fat Pirate</h1>
 						<img
 							class="best-games__game-logo"
 							src="./assets/images/fatpirate.png"
 							alt="fatpirate"
 						/>
+						<h1 class="best-games__game-title">Fat Pirate</h1>
 						<div class="best-games__line"></div>
 						<div class="best-games__text-container">
 							<p class="best-games__game-bonus">
@@ -73,7 +80,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="games">
+			<section class="games" id="games">
 				<div class="games__description">
 					<h1 class="games__title">Rewards</h1>
 					<p class="games__text">
@@ -262,8 +269,8 @@
 					</div>
 					<p class="about-us__date">December 2, 2024</p>
 					<p class="about-us__text">
-						We carefully select casinos that prioritize fast and reliable
-						payments.
+						In our casinos, players have already won over $2 million over the
+						past year.
 					</p>
 				</div>
 				<div class="about-us__advantage">
@@ -292,6 +299,257 @@
 					<p class="about-us__text">
 						Our team of 16 experts ensures a top-notch casino experience.
 					</p>
+				</div>
+			</section>
+			<section class="about-casino" id="reviews">
+				<div class="swiper about-casino__swiper">
+					<div class="swiper-wrapper">
+						<!-- WHITE WOMAN -->
+						<div class="swiper-slide">
+							<div class="about-casino__info-container">
+								<img
+									class="about-casino__img"
+									src="./assets/images/white-woman.jpg"
+									alt="woman"
+								/>
+								<div class="about-casino__info">
+									<div class="about-casino__stars">
+										<img
+											class="about-casino__star"
+											src="./assets/images/icons/star.svg"
+											alt="star"
+										/>
+										<img
+											class="about-casino__star"
+											src="./assets/images/icons/star.svg"
+											alt="star"
+										/>
+										<img
+											class="about-casino__star"
+											src="./assets/images/icons/star.svg"
+											alt="star"
+										/>
+										<img
+											class="about-casino__star"
+											src="./assets/images/icons/star.svg"
+											alt="star"
+										/>
+										<img
+											class="about-casino__star"
+											src="./assets/images/icons/star.svg"
+											alt="star"
+										/>
+									</div>
+									<p class="about-casino__text">
+										The variety of games and the bonuses offered by UK Casino
+										Offers are exceptional. I've had a wonderful experience!
+									</p>
+
+									<div class="about-casino__person-info">
+										<h1 class="about-casino__name">Emily Johnson</h1>
+										<h2 class="about-casino__job">Psychologist</h2>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- BLACK GUY -->
+						<div class="swiper-slide">
+							<div class="about-casino__info-container">
+								<img
+									class="about-casino__img"
+									src="./assets/images/black-guy.jpg"
+									alt="guy"
+								/>
+								<div class="about-casino__info">
+									<div class="about-casino__stars">
+										<img
+											class="about-casino__star"
+											src="./assets/images/icons/star.svg"
+											alt="star"
+										/>
+										<img
+											class="about-casino__star"
+											src="./assets/images/icons/star.svg"
+											alt="star"
+										/>
+										<img
+											class="about-casino__star"
+											src="./assets/images/icons/star.svg"
+											alt="star"
+										/>
+										<img
+											class="about-casino__star"
+											src="./assets/images/icons/star.svg"
+											alt="star"
+										/>
+										<img
+											class="about-casino__star"
+											src="./assets/images/icons/star.svg"
+											alt="star"
+										/>
+									</div>
+									<p class="about-casino__text">
+										This site has made finding the best casino offers in the UK
+										a breeze, and I couldn't be happier with the results.
+									</p>
+
+									<div class="about-casino__person-info">
+										<h1 class="about-casino__name">James Brown</h1>
+										<h2 class="about-casino__job">History Teacher</h2>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- ASIAN GUY -->
+						<div class="swiper-slide">
+							<div class="about-casino__info-container">
+								<img
+									class="about-casino__img"
+									src="./assets/images/asian-guy.jpg"
+									alt="guy"
+								/>
+								<div class="about-casino__info">
+									<div class="about-casino__stars">
+										<img
+											class="about-casino__star"
+											src="./assets/images/icons/star.svg"
+											alt="star"
+										/>
+										<img
+											class="about-casino__star"
+											src="./assets/images/icons/star.svg"
+											alt="star"
+										/>
+										<img
+											class="about-casino__star"
+											src="./assets/images/icons/star.svg"
+											alt="star"
+										/>
+										<img
+											class="about-casino__star"
+											src="./assets/images/icons/star.svg"
+											alt="star"
+										/>
+										<img
+											class="about-casino__star"
+											src="./assets/images/icons/star.svg"
+											alt="star"
+										/>
+									</div>
+									<p class="about-casino__text">
+										I've been using this site for months now, and it has
+										completely transformed my online gaming experience with the
+										best casino offers in the UK!
+									</p>
+
+									<div class="about-casino__person-info">
+										<h1 class="about-casino__name">Lee Wong</h1>
+										<h2 class="about-casino__job">IT Specialist</h2>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- OLD WOMAN -->
+						<div class="swiper-slide">
+							<div class="about-casino__info-container">
+								<img
+									class="about-casino__img"
+									src="./assets/images/old-woman.jpg"
+									alt="woman"
+								/>
+								<div class="about-casino__info">
+									<div class="about-casino__stars">
+										<img
+											class="about-casino__star"
+											src="./assets/images/icons/star.svg"
+											alt="star"
+										/>
+										<img
+											class="about-casino__star"
+											src="./assets/images/icons/star.svg"
+											alt="star"
+										/>
+										<img
+											class="about-casino__star"
+											src="./assets/images/icons/star.svg"
+											alt="star"
+										/>
+										<img
+											class="about-casino__star"
+											src="./assets/images/icons/star.svg"
+											alt="star"
+										/>
+										<img
+											class="about-casino__star"
+											src="./assets/images/icons/star.svg"
+											alt="star"
+										/>
+									</div>
+									<p class="about-casino__text">
+										As a retiree, I appreciate the convenience and variety of
+										casino offers this site provides; it's been a game-changer
+										for me.
+									</p>
+									<div class="about-casino__person-info">
+										<h1 class="about-casino__name">Elizabeth Smith</h1>
+										<h2 class="about-casino__job">Retiree</h2>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- WHITE GUY -->
+						<div class="swiper-slide">
+							<div class="about-casino__info-container">
+								<img
+									class="about-casino__img"
+									src="./assets/images/white-guy.jpg"
+									alt="guy"
+								/>
+								<div class="about-casino__info">
+									<div class="about-casino__stars">
+										<img
+											class="about-casino__star"
+											src="./assets/images/icons/star.svg"
+											alt="star"
+										/>
+										<img
+											class="about-casino__star"
+											src="./assets/images/icons/star.svg"
+											alt="star"
+										/>
+										<img
+											class="about-casino__star"
+											src="./assets/images/icons/star.svg"
+											alt="star"
+										/>
+										<img
+											class="about-casino__star"
+											src="./assets/images/icons/star.svg"
+											alt="star"
+										/>
+										<img
+											class="about-casino__star"
+											src="./assets/images/icons/star.svg"
+											alt="star"
+										/>
+									</div>
+									<p class="about-casino__text">
+										I've tried many sites, but this one stands out for its
+										reliability and the quality of casino offers it provides in
+										the UK.
+									</p>
+
+									<div class="about-casino__person-info">
+										<h1 class="about-casino__name">Marco Rodriguez</h1>
+										<h2 class="about-casino__job">Marketer</h2>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
+					<div class="swiper-pagination"></div>
 				</div>
 			</section>
 			<section class="faq" id="faq">
@@ -426,10 +684,10 @@
 				</div>
 			</section>
 		</main>
-		<footer class="footer">
+		<footer class="footer" id="contact">
 			<div class="footer__container">
 				<div class="footer__logo-container">
-					<img class="footer__logo" src="./assets/images/logo.png" alt="logo" />
+					<img class="footer__logo" src="./assets/images/logo.svg" alt="logo" />
 					<p class="footer__copyright">
 						FavoritesSlots © 2024 | All rights reserved.
 					</p>
@@ -488,6 +746,22 @@
 					(a.href.includes('?') ? '&' : '?') +
 					document.location.search.substr(1)
 			}
+		</script>
+		<script type="module">
+			import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
+
+			const bestBonusesSwiper = new Swiper('.about-casino__swiper', {
+				direction: 'horizontal',
+				loop: false,
+				pagination: {
+					el: '.swiper-pagination',
+					clickable: true,
+				},
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+			})
 		</script>
 		<script src="./assets/js/index.js"></script>
 	</body>
