@@ -8,13 +8,13 @@
 	--color-pink-1: #e321df;
 	--color-purple-1: #8b48ea;
 	--color-translucent-1: #ffffff71;
-	--color-traslucetn-2: #000000c0;
 	--color-green-1: #0a2b39;
 	--color-green-2: #14818d;
 	--color-green-3: #0dd795;
 	--color-green-4: #20c7da;
 	--color-yellow-1: #e9d311;
 	--color-gray-1: rgb(30, 41, 59);
+	--color-gray-2: #808080;
 	--color-gradient-1: linear-gradient(
 		90deg,
 		var(--color-blue-2),
@@ -81,14 +81,19 @@
 	padding: 20px 30px;
 	width: max-content;
 }
-.casino-link.casino-link--header:hover {
-	box-shadow: 0 0 0 4px var(--color-green-1), 0 0 0 6px var(--color-purple-1);
-}
-.casino-link:hover {
-	box-shadow: 0 0 0 4px var(--color-green-1), 0 0 0 6px var(--color-green-4);
+@media (hover: hover) {
+	.casino-link.casino-link--header:hover {
+		box-shadow: 0 0 0 4px var(--color-green-1), 0 0 0 6px var(--color-purple-1);
+	}
+	.casino-link:hover {
+		box-shadow: 0 0 0 4px var(--color-green-1), 0 0 0 6px var(--color-green-4);
+	}
 }
 .casino-link:active {
 	scale: 0.9;
+}
+.casino-link--game {
+	width: max-content;
 }
 /* HEADER */
 .header {
@@ -104,6 +109,10 @@
 	align-items: center;
 	justify-content: space-between;
 	gap: 10px;
+}
+.header__logo-link {
+	display: flex;
+	align-items: center;
 }
 .header__logo-btn {
 	display: flex;
@@ -247,7 +256,7 @@
 	flex-direction: column;
 	align-items: center;
 	gap: 30px;
-	padding: 30px 20px 20px;
+	padding: 30px 20px;
 	border-radius: 10px;
 	background-color: var(--color-green-1);
 	border: 3px solid var(--color-green-2);
@@ -652,6 +661,7 @@
 	grid-template-areas:
 		'logo logo companies'
 		'text text policy';
+	grid-template-columns: 2fr 2fr 1fr;
 	column-gap: 20px;
 	row-gap: 40px;
 	padding: 20px;
@@ -706,6 +716,47 @@
 	color: var(--color-white);
 }
 
+/* POLICY */
+.policy-main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	background-repeat: repeat;
+	background-size: 20%;
+	padding: 40px 20px;
+	margin-top: 100px;
+}
+.policy-main__container {
+	width: min(1200px, 100%);
+	padding: 20px;
+}
+.policy-main a,
+.policy-main p,
+.policy-main li {
+	color: var(--color-white);
+}
+.policy-main * {
+	margin-bottom: 16px;
+	line-height: 1.3;
+}
+.policy-main a {
+	display: inline;
+	text-decoration: underline;
+}
+.policy-main h1 {
+	color: var(--color-white);
+}
+.policy-main h2 {
+	color: var(--color-white);
+}
+.policy-main h3 {
+	color: var(--color-white);
+}
+.policy-bg {
+    background-position: 50% 50% !important;
+}
+
 /* MEDIA */
 @media (max-width: 1200px) {
 	/* REUSED STYLES */
@@ -713,7 +764,19 @@
 	/* MAIN */
 	/* MAIN -> BEST-GAMES */
 	/* MAIN -> GAMES */
+	.games__game-column--3 {
+		font-size: var(--fontSize-16);
+	}
 	/* MAIN -> ABOUT-US */
+	.about-us__advantage {
+		padding: 40px 20px;
+	}
+	.about-us__date {
+		margin-bottom: 20px;
+	}
+	.about-us__text {
+		font-size: var(--fontSize-20);
+	}
 	/* MAIN -> ABOUT-CASINO */
 	/* MAIN -> FAQ */
 	/* FOOTER */
@@ -729,16 +792,18 @@
 		top: 100%;
 		left: 20px;
 		flex-direction: column;
-		gap: 0;
-		z-index: 10;
-		border-radius: 10px;
+		gap: 0px;
+		z-index: 100;
 	}
 	.header__nav-link {
 		padding: 20px 100px 20px 24px;
 		background-color: var(--color-gray-1);
-		border-bottom: 1px solid var(--color-translucent-1);
+		border-bottom: 1px solid var(--color-gray-2);
 		transition: all 300ms ease var(--index);
+		border-left: 2px solid var(--color-gray-2);
+		border-right: 2px solid var(--color-gray-2);
 		left: calc(-100% - 20px);
+		color: var(--color-white);
 	}
 	.header__nav-link::before {
 		content: '';
@@ -746,17 +811,18 @@
 		width: 6px;
 		height: 6px;
 		border-radius: 100px;
-		background-color: var(--color-translucent-1);
+		background-color: var(--color-blue-1);
 		position: absolute;
 		top: calc(50% - 4px);
 		left: 10px;
 	}
 	.header__nav-link:first-of-type {
 		border-radius: 10px 10px 0 0;
+		border-top: 2px solid var(--color-gray-2);
 	}
 	.header__nav-link:last-of-type {
-		border-bottom: 0px solid transparent;
 		border-radius: 0 0 10px 10px;
+		border-bottom: 2px solid var(--color-gray-2);
 	}
 	.header__nav-link.active {
 		transform: translateX(calc(100% + 20px));
@@ -764,19 +830,141 @@
 	/* MAIN */
 	/* MAIN -> BEST-GAMES */
 	/* MAIN -> GAMES */
+	.games__game {
+		padding: 15px 10px;
+	}
+	.games__game-logo {
+		height: 70px;
+		width: 150px;
+	}
+	.games__game-name {
+		font-size: var(--fontSize-20);
+	}
+	.games__game-column--3 {
+		gap: 10px;
+	}
+	.games__game-icon {
+		width: 32px;
+		height: 32px;
+	}
 	/* MAIN -> ABOUT-US */
+	.about-us__advantage {
+		padding: 25px 20px;
+	}
+	.about-us__img {
+		width: 80px;
+		height: 80px;
+	}
+	.about-us__img-element {
+		width: 70px;
+		height: 70px;
+		margin-bottom: 40px;
+	}
+	.about-us__text {
+		font-size: var(--fontSize-16);
+	}
 	/* MAIN -> ABOUT-CASINO */
+	.about-casino__info-container {
+		gap: 30px;
+	}
 	/* MAIN -> FAQ */
 	/* FOOTER */
+	.footer__container {
+		display: flex;
+		flex-direction: column;
+	}
+	.footer__policy-links {
+		justify-content: center;
+	}
 }
 @media (max-width: 720px) {
 	/* REUSED STYLES */
 	/* HEADER */
 	/* MAIN */
 	/* MAIN -> BEST-GAMES */
+	.best-games__text {
+		font-size: var(--fontSize-14);
+	}
+	.best-games__title {
+		font-size: var(--fontSize-32);
+	}
 	/* MAIN -> GAMES */
+	.games__title {
+		font-size: var(--fontSize-32);
+	}
+	.games__text {
+		font-size: var(--fontSize-14);
+	}
+	.games__game {
+		grid-template-areas:
+			'logo name name name'
+			'bonus bonus bonus button';
+		padding: 20px;
+	}
+	.games__game-column--1 {
+		grid-area: logo;
+	}
+	.games__game-column--2 {
+		grid-area: name;
+	}
+	.games__game-column--3 {
+		grid-area: bonus;
+		justify-content: flex-start;
+	}
+	.games__game-column--4 {
+		grid-area: button;
+	}
 	/* MAIN -> ABOUT-US */
+	.about-us {
+		flex-direction: column;
+	}
+	.about-us__img {
+		width: 100px;
+		height: 100px;
+	}
+	.about-us__img-element {
+		width: 90px;
+		height: 90px;
+		margin-bottom: 50px;
+	}
+	.about-us__advantage {
+		width: 100%;
+	}
+	.about-us__text {
+		font-size: var(--fontSize-20);
+	}
 	/* MAIN -> ABOUT-CASINO */
+	.about-casino__info-container {
+		flex-direction: column;
+		gap: 20px;
+	}
+	.about-casino__img {
+		width: 240px;
+		height: 260px;
+	}
+	.about-casino__info {
+		padding: 0;
+		height: 210px;
+	}
+	.about-casino__stars {
+		margin-bottom: 20px;
+	}
+	.about-casino__star {
+		width: 26px;
+		height: 26px;
+	}
+	.about-casino__text {
+		margin-bottom: auto;
+	}
+	.about-casino .swiper-button-prev {
+		bottom: 0px !important;
+	}
+	.about-casino .swiper-pagination {
+		bottom: 15px !important;
+	}
+	.about-casino .swiper-button-next {
+		bottom: 0px !important;
+	}
 	/* MAIN -> FAQ */
 	.faq__title {
 		font-size: var(--fontSize-24);
@@ -791,9 +979,20 @@
 		font-size: var(--fontSize-14);
 	}
 	/* FOOTER */
+	.footer__companies {
+		justify-content: center;
+	}
+	.footer__text {
+		text-align: center;
+		line-height: 1.3;
+	}
 }
 @media (max-width: 540px) {
 	/* REUSED STYLES */
+	.casino-link--game {
+		width: 50%;
+		min-width: max-content;
+	}
 	/* HEADER */
 	.casino-link--header {
 		padding: 15px 20px;
@@ -806,8 +1005,50 @@
 		font-size: var(--fontSize-20);
 	}
 	/* MAIN */
+	.main {
+		padding-top: 20px;
+	}
 	/* MAIN -> BEST-GAMES */
+	.best-games__description {
+		gap: 5px;
+		margin-bottom: 10px;
+	}
+	.best-games__title {
+		font-size: var(--fontSize-24);
+	}
+	.best-games__game {
+		padding: 20px;
+	}
+	.best-games__game-logo {
+		height: 150px;
+	}
+	.best-games__game-bonus {
+		margin-bottom: 15px;
+	}
 	/* MAIN -> GAMES */
+	.games__description {
+		margin-bottom: 10px;
+		gap: 5px;
+	}
+	.games__title {
+		font-size: var(--fontSize-24);
+	}
+	.games__game {
+		grid-template-areas:
+			'logo name name'
+			'bonus bonus bonus'
+			'button button button';
+		grid-template-columns: 1fr 1fr 1fr;
+		padding: 20px;
+		row-gap: 20px;
+		column-gap: 10px;
+	}
+	.games__game-column--3 {
+		justify-content: center;
+	}
+	.games__game-column--4 {
+		align-items: center;
+	}
 	/* MAIN -> ABOUT-US */
 	/* MAIN -> ABOUT-CASINO */
 	/* MAIN -> FAQ */
@@ -815,18 +1056,124 @@
 		padding: 0 10px 0 10px;
 	}
 	/* FOOTER */
+	.footer__container {
+		gap: 20px;
+	}
+	.footer__copyright {
+		font-size: var(--fontSize-14);
+	}
+	.footer__contact {
+		font-size: var(--fontSize-14);
+	}
+	.footer__companies {
+		flex-wrap: wrap;
+		gap: 10px;
+	}
+	.footer__companies a {
+		width: calc((100% - 10px) / 2);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.footer__company {
+		width: 100%;
+		height: 20px;
+	}
+	.footer__companies > .footer__company {
+		width: calc((100% - 10px) / 2);
+		height: 30px;
+	}
+	.footer__policy-link {
+		color: var(--color-white);
+	}
 }
 @media (max-width: 420px) {
 	/* REUSED STYLES */
+	.casino-link {
+		font-size: var(--fontSize-14);
+	}
 	/* HEADER */
+	.header .casino-link {
+		display: none;
+	}
+	.header__logo-btn {
+		width: 100%;
+		flex-direction: row-reverse;
+		justify-content: space-between;
+	}
 	.header__nav {
 		width: calc(100% - 40px);
 	}
 	/* MAIN */
 	/* MAIN -> BEST-GAMES */
+	.best-games__text {
+		font-size: var(--fontSize-12);
+	}
+	.best-games__disclaimer {
+		font-size: var(--fontSize-14);
+	}
+	.best-games__game {
+		padding: 12px;
+		gap: 15px;
+	}
+	.best-games__title {
+		font-size: var(--fontSize-24);
+	}
+	.best-games__game-bonus {
+		font-size: var(--fontSize-14);
+		margin-bottom: 10px;
+	}
+	.best-games__game-text {
+		font-size: var(--fontSize-12);
+	}
 	/* MAIN -> GAMES */
+	.games__text {
+		font-size: var(--fontSize-12);
+	}
+	.games__game {
+		padding: 15px;
+	}
+	.games__game-logo {
+		width: 120px;
+	}
 	/* MAIN -> ABOUT-US */
 	/* MAIN -> ABOUT-CASINO */
+	.about-casino__img {
+		width: 100%;
+	}
+	.about-casino__name {
+		font-size: var(--fontSize-16);
+	}
+	.about-casino__job {
+		font-size: var(--fontSize-16);
+	}
 	/* MAIN -> FAQ */
+	.faq__question-title {
+		font-size: var(--fontSize-14);
+	}
+	.faq__question-btn {
+		width: 16px;
+		height: 16px;
+	}
+	.faq__question-text {
+		font-size: var(--fontSize-12);
+	}
 	/* FOOTER */
+	.footer__policy-links {
+		gap: 10px;
+	}
+	.footer__policy-link {
+		font-size: var(--fontSize-14);
+	}
+}
+@media (max-width: 375px) {
+	.footer__copyright {
+		font-size: var(--fontSize-12);
+	}
+	.footer__contact {
+		font-size: var(--fontSize-12);
+	}
+	.footer__policy-link {
+		font-size: var(--fontSize-12);
+	}
 }

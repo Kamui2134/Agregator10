@@ -68,5 +68,16 @@ navLinks.forEach(link => {
 		navLinks.forEach(link => {
 			link.classList.remove('active')
 		})
+		headerBtn.classList.remove('active')
 	})
 })
+
+// SHARE SITE
+async function shareSite () {
+	const url = new URL(window.location.href.split('#')[0])
+	await navigator.share({
+		title: 'Поделиться сайтом',
+		text: 'Посмотрите этот интересный сайт!',
+		url: url.href,
+	})
+}
