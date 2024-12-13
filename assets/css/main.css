@@ -292,6 +292,9 @@
 	font-size: var(--fontSize-32);
 	font-weight: var(--weight-regular);
 }
+.best-games .game-rating {
+	justify-content: center;
+}
 .best-games__game-logo {
 	width: 100%;
 	height: 210px;
@@ -406,6 +409,13 @@
 .games__game-icon {
 	width: 40px;
 	height: 40px;
+}
+.games__game-text {
+	color: var(--color-translucent-1);
+	width: 100%;
+	line-height: 1.3;
+	font-size: var(--fontSize-16);
+	display: none;
 }
 .games__game-column--4 {
 	justify-content: center;
@@ -1047,6 +1057,9 @@
 		margin-bottom: 15px;
 	}
 	/* MAIN -> GAMES */
+	.games {
+		padding: 0;
+	}
 	.games__description {
 		margin-bottom: 10px;
 		gap: 5px;
@@ -1071,17 +1084,26 @@
 	.games__game {
 		display: flex;
 		flex-direction: column;
+		gap: 20px;
+	}
+	.games__game-logo {
+		height: 120px;
+		width: 100%;
 	}
 	.games__game-column--2 {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		gap: 0;
 	}
 	.games__game-name {
-		font-size: var(--fontSize-24);
+		font-size: var(--fontSize-32);
 	}
 	.games__game-column--3 {
 		justify-content: center;
+	}
+	.games__game-text {
+		display: block;
 	}
 	.games__game-column--4 {
 		align-items: center;
@@ -1164,14 +1186,17 @@
 		font-size: var(--fontSize-12);
 	}
 	/* MAIN -> GAMES */
-	.games__text {
-		font-size: var(--fontSize-12);
-	}
 	.games__game {
-		padding: 15px;
+		gap: 15px;
 	}
 	.games__game-logo {
-		width: 120px;
+		height: 100px;
+	}
+	.games__game-name {
+		font-size: var(--fontSize-24);
+	}
+	.games__game-text {
+		font-size: var(--fontSize-14);
 	}
 	/* MAIN -> ABOUT-US */
 	/* MAIN -> ABOUT-CASINO */

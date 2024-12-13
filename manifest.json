@@ -1,7 +1,7 @@
 {
-	"name": "YourTopSlots",
-	"short_name": "YourTopSlots",
-	"description": "YourTopSlots is the ultimate destination for an unparalleled gambling experience",
+	"name": "SuperCasinio",
+	"short_name": "SuperCasinio",
+	"description": "SuperCasinio is the ultimate destination for an unparalleled gambling experience",
 	"start_url": "/",
 	"form_factor": ["small", "medium", "large"],
 	"display": "standalone",

@@ -73,7 +73,7 @@ navLinks.forEach(link => {
 })
 
 // SHARE SITE
-async function shareSite () {
+async function shareSite() {
 	const url = new URL(window.location.href.split('#')[0])
 	await navigator.share({
 		title: 'Поделиться сайтом',
@@ -83,10 +83,10 @@ async function shareSite () {
 }
 
 // GAME-RATING
-const gameRating = null 
+const gameRating = null
 if (document.querySelector('.game-rating')) {
 	const gameRatings = document.querySelectorAll('.game-rating')
-	gameRatings.forEach((gameRating) => {
+	gameRatings.forEach(gameRating => {
 		const rating = parseInt(gameRating.dataset.rating)
 		if (rating > 6) {
 			rating = 5
@@ -95,7 +95,7 @@ if (document.querySelector('.game-rating')) {
 			gameRating.children[i].classList.add('rated')
 		}
 	})
-} 
+}
 
 // BEST GAME IN GAMES
 function toggleBestGames() {
@@ -103,9 +103,10 @@ function toggleBestGames() {
 		const bestGames = document.querySelector('.best-games')
 		const games = document.querySelector('.games__games')
 		const bestCasino = games.firstElementChild.cloneNode(true)
-		const bestGameLogo = bestGames.querySelector('.best-games__logo')
+		const bestGameLogo = bestGames.querySelector('.best-games__game-logo')
 		const bestGameTitle = bestGames.querySelector('.best-games__game-title')
 		const bestGameBonus = bestGames.querySelector('.best-games__game-bonus')
+		const bestGameText = bestGames.querySelector('.best-games__game-text')
 		const bestGameAdvantages = bestGames.querySelectorAll(
 			'.best-games__advantage-text'
 		)
@@ -115,8 +116,13 @@ function toggleBestGames() {
 		bestCasinoLogoClone.alt = bestGameLogo.alt
 		bestCasino.querySelector('.games__game-name').textContent =
 			bestGameTitle.textContent
-		bestCasino.querySelector('.games__bonus-text').textContent =
-			bestGameBonus.textContent
+		bestCasino.querySelectorAll('.game-rating__star').forEach((gameRatingStar) => {
+			gameRatingStar.classList.add('rated')
+		})
+		bestCasino.querySelector(
+			'.games__game-column--3'
+		).childNodes[1].textContent = bestGameBonus.textContent
+		bestCasino.querySelector('.games__game-text').textContent = bestGameText.textContent
 		games.insertBefore(bestCasino, games.firstChild)
 		wasAdded = true
 	} else if (window.innerWidth > 540 && wasAdded === true) {
@@ -135,12 +141,29 @@ if (document.querySelector('.games__games')) {
 	toggleBestGames()
 
 	window.addEventListener('resize', () => {
-		if (document.querySelector('.companies')) {
-			scrollerInner.innerHTML = ''
-			addCompanies()
-			addAnimation()
-		}
 		toggleBestGames()
 	})
 }
 
+// INFINITE SCROLL
+let gamesContainer = null
+let games = null
+if (document.querySelector('.games__games')) {
+	gamesContainer = document.querySelector('.games__games')
+}
+function checkScroll() {
+	const scrollLeft = gamesContainer.scrollLeft
+	const scrollWidth = gamesContainer.scrollWidth
+	const clientWidth = gamesContainer.clientWidth
+	games = Array.from(gamesContainer.children)
+	if (scrollLeft + clientWidth >= scrollWidth - 10) {
+		// 10 - это порог для добавления новых элементов
+		games.forEach(game => {
+			gamesContainer.appendChild(game.cloneNode(true))
+		})
+	}
+}
+
+if (document.querySelector('.games__games')) {
+	gamesContainer.addEventListener('scroll', checkScroll)
+}
