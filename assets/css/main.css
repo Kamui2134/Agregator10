@@ -13,6 +13,7 @@
 	--color-green-3: #0dd795;
 	--color-green-4: #20c7da;
 	--color-yellow-1: #e9d311;
+	--color-yellow-2: #f3c63f;
 	--color-gray-1: rgb(30, 41, 59);
 	--color-gray-2: #808080;
 	--color-gradient-1: linear-gradient(
@@ -94,6 +95,23 @@
 }
 .casino-link--game {
 	width: max-content;
+}
+.game-rating {
+	display: flex;
+	gap: 2px;
+}
+.game-rating__star {
+	color: var(--color-yellow-2);
+	font-size: 28px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.game-rating__star::before {
+	content: '\2606';
+}
+.game-rating__star.rated::before {
+	content: '\2605';
 }
 /* HEADER */
 .header {
@@ -369,16 +387,12 @@
 	object-fit: contain;
 }
 .games__game-column--2 {
-	gap: 10px;
+	gap: 5px;
 }
 .games__game-name {
 	font-size: var(--fontSize-24);
 	color: var(--color-white);
 	font-weight: var(--weight-regular);
-}
-.games__game-address {
-	color: var(--color-translucent-1);
-	font-size: var(--fontSize-14);
 }
 .games__game-column--3 {
 	flex-direction: row;
@@ -553,7 +567,7 @@
 	opacity: 1; /* Чтобы точки были полностью видны */
 }
 .about-casino .swiper-pagination-bullet-active {
-	background: #f3c63f; /* Красный цвет активной точки */
+	background: var(--color-yellow-2); /* Красный цвет активной точки */
 }
 /* Positioning the pagination and navigation buttons */
 .about-casino .swiper-pagination {
@@ -754,7 +768,7 @@
 	color: var(--color-blue-1);
 }
 .policy-bg {
-    background-position: 50% 50% !important;
+	background-position: 50% 50% !important;
 }
 
 /* MEDIA */
@@ -1009,6 +1023,9 @@
 		padding-top: 20px;
 	}
 	/* MAIN -> BEST-GAMES */
+	.best-games {
+		margin-bottom: 0;
+	}
 	.best-games__description {
 		gap: 5px;
 		margin-bottom: 10px;
@@ -1016,11 +1033,15 @@
 	.best-games__title {
 		font-size: var(--fontSize-24);
 	}
+	.best-games__games {
+		display: none;
+	}
 	.best-games__game {
 		padding: 20px;
 	}
 	.best-games__game-logo {
 		height: 150px;
+		width: 100%;
 	}
 	.best-games__game-bonus {
 		margin-bottom: 15px;
@@ -1029,19 +1050,35 @@
 	.games__description {
 		margin-bottom: 10px;
 		gap: 5px;
+		display: none;
 	}
 	.games__title {
 		font-size: var(--fontSize-24);
 	}
+	.games__games {
+		display: grid;
+		grid-auto-flow: column;
+		grid-auto-columns: 90%;
+		overflow-x: auto;
+		overscroll-behavior-inline: contain;
+		-ms-overflow-style: none; /* IE и Edge */
+		scrollbar-width: none; /* Firefox */
+		padding: 0 20px;
+	}
+	.games__games::-webkit-scrollbar {
+		display: none;
+	}
 	.games__game {
-		grid-template-areas:
-			'logo name name'
-			'bonus bonus bonus'
-			'button button button';
-		grid-template-columns: 1fr 1fr 1fr;
-		padding: 20px;
-		row-gap: 20px;
-		column-gap: 10px;
+		display: flex;
+		flex-direction: column;
+	}
+	.games__game-column--2 {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.games__game-name {
+		font-size: var(--fontSize-24);
 	}
 	.games__game-column--3 {
 		justify-content: center;
