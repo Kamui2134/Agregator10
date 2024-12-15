@@ -198,6 +198,7 @@
 	font-weight: var(--weight-semibold);
 	position: relative;
 	transition: all 200ms ease;
+	text-wrap: nowrap;
 }
 .header__nav-link::after {
 	content: '';
@@ -767,6 +768,7 @@
 .policy-main a {
 	display: inline;
 	text-decoration: underline;
+	word-break: break-all;
 }
 .policy-main h1 {
 	color: var(--color-blue-1);
@@ -820,7 +822,7 @@
 		z-index: 100;
 	}
 	.header__nav-link {
-		padding: 20px 100px 20px 24px;
+		padding: 20px 80px 20px 24px;
 		background-color: var(--color-gray-1);
 		border-bottom: 1px solid var(--color-gray-2);
 		transition: all 300ms ease var(--index);
