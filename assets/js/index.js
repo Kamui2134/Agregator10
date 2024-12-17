@@ -116,13 +116,21 @@ function toggleBestGames() {
 		bestCasinoLogoClone.alt = bestGameLogo.alt
 		bestCasino.querySelector('.games__game-name').textContent =
 			bestGameTitle.textContent
-		bestCasino.querySelectorAll('.game-rating__star').forEach((gameRatingStar) => {
-			gameRatingStar.classList.add('rated')
-		})
+		bestCasino
+			.querySelectorAll('.game-rating__star')
+			.forEach(gameRatingStar => {
+				gameRatingStar.classList.add('rated')
+			})
 		bestCasino.querySelector(
 			'.games__game-column--3'
-		).childNodes[1].textContent = bestGameBonus.textContent
-		bestCasino.querySelector('.games__game-text').textContent = bestGameText.textContent
+		).childNodes[2].textContent = bestGameBonus.textContent
+		console.log(bestGameBonus.textContent)
+		console.log(
+			bestCasino.querySelector('.games__game-column--3').childNodes[1]
+				.textContent
+		)
+		bestCasino.querySelector('.games__game-text').textContent =
+			bestGameText.textContent
 		games.insertBefore(bestCasino, games.firstChild)
 		wasAdded = true
 	} else if (window.innerWidth > 540 && wasAdded === true) {
